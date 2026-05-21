@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Banhos de Floresta — Teoria e Prática para uma Vida Plena. Formação do Instituto Mestra Natureza: 27 aulas, 7 capítulos, 40h unindo ciência, ancestralidade e ecofilosofia.">
+<meta name="theme-color" content="#18301F">
+<title>Banhos de Floresta — Teoria e Prática para uma Vida Plena | Mestra Natureza</title>
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Banhos de Floresta — Teoria e Prática para uma Vida Plena">
+<meta property="og:description" content="Uma jornada que une saberes ancestrais, ciência e ecofilosofia. 27 aulas · 7 capítulos · 40h.">
+<meta property="og:image" content="imagens-landingpage-atual-bfmn-26/background-hero-section.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --sand:#F4EFE5;
+    --sand-alt:#EAE1D0;
+    --cream:#FFFDF8;
+    --forest-deep:#16301F;
+    --forest:#234A30;
+    --forest-soft:#2F5A3C;
+    --sage:#5C7F5F;
+    --sage-line:rgba(120,160,123,.45);
+    --clay:#A85731;
+    --clay-hover:#8C461F;
+    --gold:#A6824E;
+    --ink:#322F29;
+    --ink-soft:#5E594E;
+    --on-dark:#ECE4D4;
+    --on-dark-soft:rgba(236,228,212,.74);
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --mono:'Courier New',ui-monospace,monospace;
+    --shadow-sm:0 4px 18px rgba(31,46,33,.06);
+    --shadow-md:0 14px 40px rgba(31,46,33,.10);
+    --shadow-lg:0 26px 60px rgba(22,48,31,.20);
+    --shadow-xl:0 32px 70px rgba(22,48,31,.25);
+    --ease:cubic-bezier(.4,0,.2,1);
+    --maxw:1180px;
+    --radius:18px;
+    --radius-sm:12px;
+    --radius-lg:24px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
+
+  body{
+    font-family:var(--sans);
+    background-color:var(--sand);
+    color:var(--ink);
+    font-weight:400;
+    line-height:1.7;
+    font-size:clamp(0.94rem,1.2vw,1rem);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    overflow-x:hidden;
+  }
+
+  /* Grão orgânico — textura analógica sobre as superfícies */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    opacity:.04;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  h1,h2,h3,h4{font-family:var(--serif);color:var(--forest);font-weight:500;line-height:1.15;letter-spacing:-.01em}
+  h1{font-weight:300}
+  p{font-size:clamp(1rem,1.3vw,1.06rem);color:var(--ink-soft);line-height:1.8;max-width:65ch}
+  p:last-child{margin-bottom:0}
+  strong{color:var(--ink);font-weight:600}
+  em{font-style:italic}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block;height:auto}
+  ::selection{background:var(--sage);color:#fff}
+
+  :focus-visible{outline:3px solid var(--clay);outline-offset:4px;border-radius:6px;box-shadow:0 0 0 6px rgba(168,87,49,.15)}
+
+  /* Skip link para acessibilidade */
+  .skip-link{
+    position:absolute;top:-100%;left:50%;transform:translateX(-50%);
+    background:var(--forest);color:#fff;padding:12px 24px;border-radius:var(--radius-sm);
+    font-weight:600;z-index:200;transition:top .3s var(--ease);
+  }
+  .skip-link:focus{top:12px}
+
+  /* Melhorias de cursor e interação */
+  button,a{cursor:pointer}
+  .btn,.nav-links a,.faq-item summary,.perfil,.ben,.mod,.d-card,.dep{cursor:pointer}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,48px);position:relative;z-index:2}
+
+  section{padding:clamp(4rem,8vw,7rem) 0;position:relative;z-index:2}
+
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--sans);font-size:.72rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:.28em;color:var(--forest-soft);
+    margin-bottom:1.3rem;
+  }
+  .kicker::before{content:"";width:30px;height:1px;background:var(--sage)}
+  .kicker.center{justify-content:center}
+
+  .h-section{font-size:clamp(1.9rem,4.2vw,3.2rem);margin-bottom:1rem;line-height:1.1}
+  .h-section .accent{font-style:italic;color:var(--clay);font-weight:400}
+  .lead{font-size:clamp(1.02rem,1.5vw,1.18rem);max-width:60ch;line-height:1.75}
+  .center .lead{margin-left:auto;margin-right:auto}
+  .center{text-align:center}
+
+  /* ---------- Botões ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:12px;
+    background:var(--clay);color:#fff;
+    font-family:var(--sans);font-size:clamp(0.88rem,1.1vw,0.95rem);font-weight:600;
+    letter-spacing:.06em;text-transform:uppercase;
+    padding:clamp(16px,2.5vw,18px) clamp(32px,5vw,38px);border:none;border-radius:999px;cursor:pointer;
+    min-height:52px;
+    transition:background .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);
+    box-shadow:0 10px 26px rgba(168,87,49,.28);
+    cursor:pointer;
+  }
+  .btn svg{width:18px;height:18px;transition:transform .3s var(--ease);flex-shrink:0}
+  .btn:hover{background:var(--clay-hover);transform:translateY(-2px);box-shadow:0 14px 32px rgba(168,87,49,.35)}
+  .btn:hover svg{transform:translateX(4px)}
+  .btn:active{transform:translateY(0) scale(0.98)}
+  .btn-ghost{
+    background:rgba(255,255,255,.10);color:var(--on-dark);
+    border:1px solid rgba(236,228,212,.40);box-shadow:none;
+    backdrop-filter:blur(8px);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,.18);box-shadow:none;transform:translateY(-1px)}
+
+  /* ---------- Navegação ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:clamp(14px,2vw,18px) clamp(20px,5vw,48px);
+    transition:background .35s var(--ease),box-shadow .35s var(--ease),padding .35s var(--ease);
+  }
+  .nav.scrolled{
+    background:rgba(244,239,229,.92);
+    backdrop-filter:blur(16px);
+    box-shadow:0 2px 12px rgba(31,46,33,.08);
+    padding-top:clamp(10px,1.5vw,12px);padding-bottom:clamp(10px,1.5vw,12px);
+  }
+  .brand{display:flex;align-items:center;gap:0;color:#fff;transition:color .35s var(--ease)}
+  .nav.scrolled .brand{color:var(--forest)}
+  .brand-logo{
+    width:clamp(44px,5vw,52px);height:clamp(44px,5vw,52px);object-fit:contain;flex-shrink:0;
+    transition:all .35s var(--ease);
+  }
+  .brand-name{font-family:var(--serif);font-size:clamp(1.05rem,1.8vw,1.18rem);font-weight:600;letter-spacing:.02em;line-height:1}
+  .brand-name span{display:block;font-family:var(--sans);font-size:.6rem;font-weight:500;letter-spacing:.34em;text-transform:uppercase;opacity:.8;margin-top:3px}
+
+  .nav-links{display:flex;align-items:center;gap:4px;
+    background:rgba(255,255,255,.10);backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px;}
+  .nav.scrolled .nav-links{background:rgba(255,255,255,.60);border-color:var(--sage-line)}
+  .nav-links a{
+    font-size:clamp(0.82rem,1vw,0.88rem);font-weight:500;color:rgba(255,255,255,.92);
+    padding:9px 16px;border-radius:999px;transition:all .3s var(--ease);
+    white-space:nowrap;
+  }
+  .nav.scrolled .nav-links a{color:var(--ink-soft)}
+  .nav-links a:hover{background:var(--forest);color:#fff}
+  .nav.scrolled .nav-links a:hover{background:var(--forest);color:#fff}
+
+  .nav-cta{display:flex;align-items:center;gap:clamp(10px,2vw,14px)}
+  .nav-cta .btn{padding:clamp(11px,1.5vw,13px) clamp(22px,3vw,28px);min-height:46px;font-size:clamp(0.82rem,1vw,0.88rem);box-shadow:0 8px 20px rgba(168,87,49,.28)}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;color:#fff;padding:8px}
+  .nav.scrolled .nav-toggle{color:var(--forest)}
+  .nav-toggle svg{width:28px;height:28px}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    min-height:100vh;min-height:100dvh;
+    display:flex;align-items:center;justify-content:center;
+    padding:clamp(100px,15vh,140px) 0 clamp(60px,10vh,80px);
+    background:
+      linear-gradient(105deg,rgba(18,40,26,.88) 0%,rgba(18,40,26,.60) 50%,rgba(18,40,26,.35) 100%),
+      url("imagens-landingpage-atual-bfmn-26/background-hero-section.png") center/cover no-repeat;
+    color:var(--on-dark);
+  }
+  .hero .wrap{max-width:820px;text-align:center}
+  .hero .kicker{color:#C9D9C0;justify-content:center}
+  .hero .kicker::before{background:#C9D9C0}
+  .hero h1{
+    color:#fff;font-size:clamp(3rem,7.5vw,5.4rem);font-weight:300;
+    margin-bottom:1.2rem;text-shadow:0 2px 24px rgba(0,0,0,.40);line-height:1.08;
+  }
+  .hero h1 em{color:#E9DCC4;font-weight:400}
+  .hero .subhead{
+    font-family:var(--serif);font-style:italic;font-size:clamp(1.2rem,2.4vw,1.7rem);
+    color:#E5DCC9;margin-bottom:1.2rem;font-weight:400;line-height:1.3;
+  }
+  .hero .desc{color:rgba(236,228,212,.88);font-size:clamp(1rem,1.5vw,1.1rem);max-width:58ch;margin:0 auto 2.2rem;line-height:1.75}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:clamp(12px,2vw,16px);align-items:center;justify-content:center}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,28px);margin-top:clamp(24px,4vw,32px);padding-top:clamp(16px,3vw,20px);border-top:1px solid rgba(236,228,212,.22);justify-content:center}
+  .hero-meta div{line-height:1.2}
+  .hero-meta .n{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2rem);color:#fff;font-weight:500}
+  .hero-meta .l{font-size:clamp(0.68rem,0.9vw,0.76rem);letter-spacing:.16em;text-transform:uppercase;color:rgba(236,228,212,.72)}
+
+  /* ---------- Divisores orgânicos ---------- */
+  .wave{display:block;width:100%;height:auto;position:relative;z-index:2;margin-bottom:-1px;line-height:0}
+  .wave svg{display:block;width:100%;height:clamp(40px,6vw,60px)}
+
+  /* ---------- Conexão emocional ---------- */
+  .conexao{background:var(--sand);text-align:center}
+  .conexao .wrap{max-width:800px}
+  .conexao p{font-family:var(--serif);font-size:clamp(1.2rem,2.4vw,1.7rem);color:var(--forest);font-weight:300;line-height:1.6;margin-bottom:1.2rem}
+  .conexao p:last-child{color:var(--clay);font-style:italic}
+
+  /* ---------- O que são (split) ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center}
+  .o-que-sao{background:var(--sand-alt)}
+  .figure-organic{position:relative}
+  .figure-organic .frame{
+    border-radius:var(--radius-lg) var(--radius-lg) 50% 50% / 4% 4% 24% 24%;
+    overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:5/6;
+  }
+  .figure-organic .frame img{width:100%;height:100%;object-fit:cover}
+  .figure-organic .catalog{background:rgba(18,40,26,.55)}
+  .figure-organic .catalog .dot{background:#C9D9C0}
+
+  /* ---------- Apresentação do curso (escuro) ---------- */
+  .curso{
+    background:var(--forest-deep);color:var(--on-dark);
+    background-image:radial-gradient(circle at 18px 18px,rgba(255,255,255,.025) 1.5px,transparent 0);
+    background-size:46px 46px;
+  }
+  .curso h2,.curso h3{color:#fff}
+  .curso p{color:var(--on-dark-soft)}
+  .curso .kicker{color:#A9C6A3}.curso .kicker::before{background:#A9C6A3}
+  .curso .lead{margin-bottom:3rem}
+  .destaques{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,24px)}
+  .d-card{
+    background:rgba(255,255,255,.045);border:1px solid rgba(236,228,212,.14);
+    border-radius:var(--radius);padding:clamp(24px,3vw,32px) clamp(22px,3vw,28px);
+    transition:transform .35s var(--ease),background .35s var(--ease),border-color .35s var(--ease);
+    text-align:center;
+  }
+  .d-card:hover{transform:translateY(-5px);background:rgba(255,255,255,.07);border-color:rgba(169,198,163,.5)}
+  .d-icon{
+    width:clamp(48px,6vw,54px);height:clamp(48px,6vw,54px);border-radius:var(--radius-sm);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+    background:linear-gradient(135deg,var(--sage),var(--forest));
+  }
+  .d-icon svg{width:clamp(22px,3vw,26px);height:clamp(22px,3vw,26px);color:#fff}
+  .d-card h3{font-size:clamp(1.2rem,1.8vw,1.35rem);margin-bottom:.5rem}
+  .d-card p{font-size:clamp(0.92rem,1.2vw,0.98rem);margin:0}
+
+  /* ---------- Módulos ---------- */
+  .modulos{background:var(--sand)}
+  .mod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,3vw,22px);margin-top:clamp(28px,4vw,40px)}
+  .mod{
+    background:var(--cream);border:1px solid var(--sage-line);
+    border-radius:var(--radius);padding:clamp(24px,3vw,32px) clamp(22px,3vw,30px);
+    position:relative;overflow:hidden;
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  }
+  .mod::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--clay);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+  .mod:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .mod:hover::before{transform:scaleY(1)}
+  .mod-num{font-family:var(--mono);font-size:clamp(0.72rem,0.9vw,0.8rem);letter-spacing:.18em;color:var(--clay);text-transform:uppercase;margin-bottom:.5rem;display:block}
+  .mod h3{font-size:clamp(1.25rem,2vw,1.45rem);color:var(--forest);margin-bottom:clamp(14px,2vw,18px)}
+  .mod ul{list-style:none}
+  .mod li{position:relative;padding-left:1.8rem;margin-bottom:.5rem;font-size:clamp(0.9rem,1.1vw,0.97rem);color:var(--ink-soft);line-height:1.6}
+  .mod li::before{
+    content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:50%;
+    background:transparent;border:1.5px solid var(--sage);
+  }
+  .mod.span2{grid-column:1/-1;max-width:680px;margin:0 auto;width:100%}
+
+  /* ---------- Aula Experimental ---------- */
+  .aula-exp{background:var(--sand-alt);text-align:center}
+  .aula-exp .wrap{max-width:800px}
+  .aula-exp h2{color:var(--forest)}
+  .aula-exp .kicker{color:var(--forest-soft)}.aula-exp .kicker::before{background:var(--sage)}
+  .aula-exp p{margin:0 auto 2rem}
+  .video-frame{
+    position:relative;width:100%;max-width:720px;margin:0 auto;border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:var(--shadow-lg);aspect-ratio:16/9;background:var(--forest-deep);
+  }
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+  .aula-exp .btn{margin-top:1.6rem}
+
+  /* ---------- Para quem é ---------- */
+  .para-quem{background:var(--sand-alt)}
+  .perfis{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,22px);margin-top:clamp(28px,4vw,40px)}
+  .perfil{
+    background:var(--cream);border-radius:var(--radius);padding:clamp(26px,3vw,34px) clamp(20px,3vw,26px);text-align:center;
+    border:1px solid var(--sage-line);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  }
+  .perfil:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+  .perfil .p-icon{
+    width:clamp(52px,7vw,60px);height:clamp(52px,7vw,60px);border-radius:50%;margin:0 auto clamp(14px,2vw,18px);
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#9DBE94,var(--forest));
+  }
+  .perfil .p-icon svg{width:clamp(24px,3vw,28px);height:clamp(24px,3vw,28px);color:#fff}
+  .perfil h3{font-size:clamp(1.15rem,1.6vw,1.25rem);color:var(--clay);font-style:italic;margin-bottom:.6rem}
+  .perfil p{font-size:clamp(0.9rem,1.1vw,0.95rem);margin:0}
+
+  /* ---------- Benefícios ---------- */
+  .beneficios{background:var(--sand)}
+  .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,24px);margin-top:clamp(28px,4vw,40px)}
+  .ben{
+    background:var(--cream);border-radius:var(--radius);padding:clamp(26px,3vw,34px) clamp(24px,3vw,30px);
+    border:1px solid var(--sage-line);
+    transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+    text-align:center;
+  }
+  .ben:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--clay)}
+  .ben .b-icon{
+    width:clamp(44px,6vw,50px);height:clamp(44px,6vw,50px);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin:0 auto clamp(14px,2vw,18px);
+    background:rgba(92,127,95,.14);
+  }
+  .ben .b-icon svg{width:clamp(20px,2.5vw,24px);height:clamp(20px,2.5vw,24px);color:var(--forest)}
+  .ben h3{font-size:clamp(1.2rem,1.7vw,1.3rem);color:var(--forest);margin-bottom:.55rem}
+  .ben p{font-size:clamp(0.92rem,1.1vw,0.97rem);margin:0}
+
+  /* ---------- Ciência (escuro + imagem) ---------- */
+  .ciencia{
+    background:var(--forest);color:var(--on-dark);
+  }
+  .ciencia h2{color:#fff}
+  .ciencia p{color:var(--on-dark-soft)}
+  .ciencia .kicker{color:#BFE0B5}.ciencia .kicker::before{background:#BFE0B5}
+  .ciencia .h-section .accent{color:#E9DCC4}
+  .ciencia .figure-organic .frame{border-radius:50% 50% var(--radius-lg) var(--radius-lg) / 24% 24% 4% 4%;border:1px solid rgba(255,255,255,.16)}
+  .ciencia .quote-line{
+    margin-top:clamp(18px,3vw,24px);padding-left:clamp(16px,2vw,20px);border-left:3px solid var(--clay);
+    font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,1.8vw,1.3rem);color:#E9DCC4;line-height:1.5;
+  }
+
+  /* ---------- Escola ---------- */
+  .escola{background:var(--sand)}
+  .escola .figure-organic .frame{border-radius:16px 50% 50% 16px / 4% 26% 26% 4%}
+
+  /* ---------- Depoimentos (escuro) ---------- */
+  .depoimentos{
+    background:var(--forest-deep);color:var(--on-dark);
+    background-image:radial-gradient(circle at 18px 18px,rgba(255,255,255,.025) 1.5px,transparent 0);
+    background-size:46px 46px;
+  }
+  .depoimentos h2{color:#fff}
+  .depoimentos .kicker{color:#A9C6A3}.depoimentos .kicker::before{background:#A9C6A3}
+  .dep-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(18px,3vw,24px);margin-top:clamp(28px,4vw,40px);align-items:start}
+  .dep{
+    background:rgba(255,255,255,.045);border:1px solid rgba(236,228,212,.14);
+    border-radius:var(--radius);padding:clamp(32px,4vw,42px) clamp(28px,4vw,38px);position:relative;
+  }
+  .dep .mark-quote{font-family:var(--serif);font-size:clamp(3.5rem,6vw,5rem);line-height:.6;color:var(--clay);opacity:.55;height:clamp(28px,4vw,34px);display:block}
+  .dep p{font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,1.5vw,1.18rem);color:var(--on-dark);line-height:1.65;margin:clamp(12px,2vw,16px) 0 clamp(18px,3vw,24px)}
+  .dep.small p{font-size:clamp(0.98rem,1.3vw,1.06rem)}
+  .dep .who{display:flex;align-items:center;gap:clamp(12px,2vw,14px)}
+  .dep .av{
+    width:clamp(40px,5vw,46px);height:clamp(40px,5vw,46px);border-radius:50%;flex-shrink:0;
+    background:linear-gradient(135deg,var(--sage),var(--forest));
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:clamp(1rem,1.3vw,1.1rem);color:#fff;font-weight:600;
+  }
+  .dep .who .nm{font-family:var(--sans);font-weight:600;font-size:clamp(0.88rem,1.1vw,0.95rem);color:#fff;font-style:normal;line-height:1.3}
+  .dep .who .ct{font-family:var(--sans);font-size:clamp(0.72rem,0.9vw,0.8rem);letter-spacing:.1em;text-transform:uppercase;color:var(--on-dark-soft);font-style:normal}
+
+  /* ---------- Investimento ---------- */
+  .investimento{background:var(--sand-alt);text-align:center}
+  .price-card{
+    max-width:540px;margin:clamp(28px,5vw,40px) auto 0;background:var(--cream);
+    border:1px solid var(--sage-line);border-radius:var(--radius-lg);
+    padding:clamp(28px,5vw,40px);box-shadow:var(--shadow-md);
+    transform:rotate(-1deg);transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  }
+  .price-card:hover{transform:rotate(0);box-shadow:var(--shadow-lg)}
+  .price-card .tag{
+    display:inline-block;background:rgba(168,87,49,.12);color:var(--clay);
+    font-size:clamp(0.68rem,0.9vw,0.76rem);font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    padding:8px 18px;border-radius:999px;margin-bottom:clamp(14px,2vw,18px);
+  }
+  .price-card h3{font-size:clamp(1.5rem,2.5vw,1.7rem);color:var(--forest);margin-bottom:.4rem}
+  .price-card .desc{font-size:clamp(0.92rem,1.2vw,0.98rem);color:var(--ink-soft);margin-bottom:clamp(18px,3vw,24px)}
+  .price-val{font-family:var(--serif);font-size:clamp(2.8rem,7vw,4.2rem);color:var(--forest);font-weight:600;line-height:1}
+  .price-val small{font-size:clamp(0.95rem,1.2vw,1.1rem);color:var(--ink-soft);font-family:var(--sans);font-weight:500;display:block;margin-bottom:.4rem;letter-spacing:.04em}
+  .price-card .btn{width:100%;margin:clamp(18px,3vw,24px) 0 clamp(14px,2vw,18px)}
+  .pay-list{list-style:none;text-align:left;max-width:320px;margin:0 auto;border-top:1px solid var(--sage-line);padding-top:clamp(14px,2vw,18px)}
+  .pay-list li{position:relative;padding-left:28px;margin-bottom:.55rem;font-size:clamp(0.86rem,1vw,0.94rem);color:var(--ink-soft)}
+  .pay-list li svg{position:absolute;left:0;top:3px;width:clamp(16px,2vw,18px);height:clamp(16px,2vw,18px);color:var(--sage)}
+  .secure{font-size:clamp(0.72rem,0.9vw,0.8rem);color:var(--ink-soft);margin-top:clamp(12px,2vw,16px);display:flex;align-items:center;justify-content:center;gap:7px}
+  .secure svg{width:clamp(14px,1.8vw,15px);height:clamp(14px,1.8vw,15px);color:var(--sage)}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:var(--sand)}
+  .faq .wrap{max-width:800px}
+  .faq-item{border-bottom:1px solid var(--sage-line)}
+  .faq-item summary{
+    list-style:none;cursor:pointer;padding:clamp(16px,2.5vw,20px) clamp(36px,5vw,48px) clamp(16px,2.5vw,20px) 0;position:relative;
+    font-family:var(--serif);font-size:clamp(1.08rem,1.6vw,1.2rem);font-weight:600;color:var(--forest);
+    transition:color .3s var(--ease);
+  }
+  .faq-item summary:hover{color:var(--clay)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::after{
+    content:"";position:absolute;right:6px;top:50%;width:14px;height:14px;
+    background:
+      linear-gradient(var(--clay),var(--clay)) center/14px 2px no-repeat,
+      linear-gradient(var(--clay),var(--clay)) center/2px 14px no-repeat;
+    transition:transform .3s var(--ease);
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg)}
+  .faq-item p{padding:0 clamp(36px,5vw,48px) clamp(18px,3vw,24px) 0;margin:0;font-size:clamp(0.94rem,1.2vw,1rem);color:var(--ink-soft);line-height:1.7}
+
+  /* ---------- CTA final ---------- */
+  .cta-final{
+    text-align:center;color:var(--on-dark);
+    background:
+      linear-gradient(rgba(18,40,26,.85),rgba(18,40,26,.92)),
+      url("imagens-landingpage-atual-bfmn-26/background-cta-final.png") center/cover no-repeat;
+    background-attachment:fixed;
+    padding:clamp(5rem,10vw,9rem) 0;
+  }
+  .cta-final h2{color:#fff;font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:300;margin-bottom:clamp(14px,2vw,18px);line-height:1.1}
+  .cta-final h2 em{color:#E9DCC4;font-weight:400}
+  .cta-final p{color:rgba(236,228,212,.88);font-size:clamp(1rem,1.8vw,1.2rem);max-width:580px;margin:0 auto clamp(24px,4vw,32px);line-height:1.7}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--forest-deep);color:var(--on-dark-soft);padding:3.4rem 0 2.4rem;text-align:center;position:relative;z-index:2}
+  footer .brand{justify-content:center;color:#fff;margin-bottom:1rem}
+  footer .brand-logo{opacity:.9}
+  footer p{font-size:.86rem;color:var(--on-dark-soft);margin:0}
+  footer .fine{font-size:.76rem;opacity:.65;margin-top:.5rem}
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+  
+  /* Stagger animation for grid children */
+  .destaques .reveal:nth-child(2){transition-delay:.1s}
+  .destaques .reveal:nth-child(3){transition-delay:.2s}
+  .perfis .reveal:nth-child(2){transition-delay:.08s}
+  .perfis .reveal:nth-child(3){transition-delay:.16s}
+  .perfis .reveal:nth-child(4){transition-delay:.24s}
+  .ben-grid .reveal:nth-child(2){transition-delay:.08s}
+  .ben-grid .reveal:nth-child(3){transition-delay:.16s}
+  .ben-grid .reveal:nth-child(4){transition-delay:.24s}
+  .ben-grid .reveal:nth-child(5){transition-delay:.32s}
+  .ben-grid .reveal:nth-child(6){transition-delay:.4s}
+  .mod-grid .reveal:nth-child(2){transition-delay:.08s}
+  .mod-grid .reveal:nth-child(3){transition-delay:.16s}
+  .mod-grid .reveal:nth-child(4){transition-delay:.24s}
+  .mod-grid .reveal:nth-child(5){transition-delay:.32s}
+  .mod-grid .reveal:nth-child(6){transition-delay:.4s}
+  .mod-grid .reveal:nth-child(7){transition-delay:.48s}
+
+  /* ---------- Responsivo ---------- */
+  @media(max-width:1024px){
+    .split{grid-template-columns:1fr;gap:clamp(2rem,5vw,3rem)}
+    .figure-organic{order:-1;max-width:420px;margin:0 auto}
+    .destaques,.ben-grid{grid-template-columns:repeat(2,1fr)}
+    .perfis{grid-template-columns:repeat(2,1fr)}
+    .dep-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:768px){
+    .nav-links{display:none}
+    .nav-toggle{display:block}
+    .nav-cta .btn span{display:none}
+    .nav-cta .btn{padding:12px;width:48px;min-height:48px}
+    .mod-grid{grid-template-columns:1fr}
+    .mod.span2{grid-column:auto;max-width:100%}
+    .destaques,.ben-grid,.perfis{grid-template-columns:1fr}
+    .hero{padding-top:clamp(90px,18vh,120px)}
+    section{padding:clamp(3.5rem,7vw,5rem) 0}
+    .price-card{transform:none}
+    .cta-final{background-attachment:scroll}
+    .mobile-menu.open{display:flex}
+    .wave svg{height:40px}
+    .figure-organic .frame{border-radius:var(--radius-lg) var(--radius-lg) 50% 50% / 4% 4% 20% 20%}
+    .ciencia .figure-organic .frame{border-radius:50% 50% var(--radius-lg) var(--radius-lg) / 20% 20% 4% 4%}
+    .escola .figure-organic .frame{border-radius:var(--radius-lg) 50% 50% var(--radius-lg) / 4% 20% 20% 4%}
+  }
+  @media(max-width:480px){
+    .hero h1{font-size:clamp(2.4rem,9vw,3.4rem)}
+    .hero .subhead{font-size:clamp(1.05rem,4vw,1.3rem)}
+    .hero-actions{flex-direction:column;width:100%}
+    .hero-actions .btn{width:100%}
+    .hero-meta{gap:18px}
+    .hero-meta .n{font-size:1.6rem}
+    .btn{min-height:50px;width:100%}
+    .nav-cta .btn{width:46px;min-height:46px}
+  }
+
+  /* ---------- Menu mobile ---------- */
+  .mobile-menu{
+    display:none;position:fixed;inset:0;z-index:99;
+    background:rgba(18,40,26,.98);backdrop-filter:blur(12px);
+    flex-direction:column;align-items:center;justify-content:center;gap:clamp(6px,2vh,12px);
+    padding:clamp(60px,10vh,80px) clamp(24px,5vw,48px) clamp(40px,8vh,60px);
+  }
+  .mobile-menu a{font-family:var(--serif);font-size:clamp(1.4rem,4vw,1.8rem);color:var(--on-dark);padding:clamp(12px,2vh,16px) clamp(20px,4vw,32px);transition:color .3s var(--ease)}
+  .mobile-menu a:hover{color:#fff}
+  .mobile-menu .btn{margin-top:clamp(16px,3vh,24px);color:#fff;width:auto;min-width:240px}
+  .mm-close{position:absolute;top:clamp(16px,3vw,24px);right:clamp(16px,3vw,24px);background:none;border:none;color:var(--on-dark);cursor:pointer;padding:clamp(8px,1.5vw,12px);transition:color .3s var(--ease)}
+  .mm-close:hover{color:#fff}
+  .mm-close svg{width:clamp(26px,5vw,30px);height:clamp(26px,5vw,30px)}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+    .reveal{opacity:1;transform:none}
+    .cta-final{background-attachment:scroll}
+  }
+  @media(orientation:landscape) and (max-height:500px){
+    .hero{min-height:auto;padding:100px 0 60px}
+    .mobile-menu{padding:80px 24px 40px}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+<!-- ============ NAV ============ -->
+<nav class="nav" id="nav" aria-label="Navegação principal">
+  <a class="brand" href="#topo" aria-label="Mestra Natureza — início">
+    <img src="logo mestra.png" alt="Mestra Natureza" class="brand-logo" width="52" height="52">
+  </a>
+  <div class="nav-links">
+    <a href="#sobre-o-curso">O Curso</a>
+    <a href="#modulos">Capítulos</a>
+    <a href="#para-quem">Para quem é</a>
+    <a href="#depoimentos">Vozes</a>
+    <a href="#investimento">Investimento</a>
+  </div>
+  <div class="nav-cta">
+    <a href="https://pay.kiwify.com.br/HtdaLpc" class="btn" target="_blank" rel="noopener noreferrer">
+      <span>Inscreva-se</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" id="mmClose" aria-label="Fechar menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <a href="#sobre-o-curso">O Curso</a>
+  <a href="#modulos">Capítulos</a>
+  <a href="#para-quem">Para quem é</a>
+  <a href="#depoimentos">Vozes</a>
+  <a href="#investimento">Investimento</a>
+  <a href="https://pay.kiwify.com.br/HtdaLpc" class="btn" target="_blank" rel="noopener noreferrer">Entre na floresta</a>
+</div>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero" id="topo">
+  <div class="wrap" id="main-content">
+    <span class="kicker">Formação · Instituto Mestra Natureza</span>
+    <h1>Banhos de <em>Floresta</em></h1>
+    <p class="subhead">Teoria e Prática para uma Vida Plena</p>
+    <p class="desc">Uma jornada que une saberes ancestrais, ciência e ecofilosofia — com profundidade e poesia, guiando você de volta à sua verdadeira natureza.</p>
+    <div class="hero-actions">
+      <a href="https://pay.kiwify.com.br/HtdaLpc" class="btn" target="_blank" rel="noopener noreferrer">
+        Entre na floresta
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#sobre-o-curso" class="btn btn-ghost">Conhecer a formação</a>
+    </div>
+    <div class="hero-meta">
+      <div><div class="n">27</div><div class="l">Aulas gravadas</div></div>
+      <div><div class="n">7</div><div class="l">Capítulos</div></div>
+      <div><div class="n">40h</div><div class="l">De conteúdo</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#F4EFE5" d="M0,30 C240,60 480,0 720,24 C960,48 1200,8 1440,34 L1440,60 L0,60 Z"/></svg></div>
+
+<!-- ============ 1b. AULA EXPERIMENTAL ============ -->
+<section class="aula-exp" id="aula-experimental">
+  <div class="wrap reveal">
+    <span class="kicker center">Experimente antes de entrar</span>
+    <h2 class="h-section">Ouça o chamado da <span class="accent">floresta</span></h2>
+    <p class="lead" style="margin:0 auto">Antes de dar o próximo passo, convidamos você a sentir o que nos espera. Assista à primeira aula — sem compromisso, sem cadastro. Deixe que a floresta fale por si.</p>
+    <div class="video-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/kgN2VsaOnHA?rel=0&modestbranding=1&showinfo=0" title="Aula experimental — Banhos de Floresta" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <a href="https://pay.kiwify.com.br/HtdaLpc" class="btn" target="_blank" rel="noopener noreferrer">
+      Se sentiu o chamado? Inscreva-se
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ 2. CONEXÃO EMOCIONAL ============ -->
+<section class="conexao">
+  <div class="wrap reveal">
+    <span class="kicker center">O chamado</span>
+    <h2 class="h-section">O chamado da Natureza<br><span class="accent">pulsa em você?</span></h2>
+    <p>Em um mundo que exige velocidade constante e hiperconexão digital, o cansaço e a desconexão tornaram-se a paisagem comum das nossas almas. Sentimos um vazio, uma saudade de algo que mal sabemos nomear.</p>
+    <p>Mas existe um convite silencioso esperando logo ali, na sombra das árvores, no farfalhar das folhas, na respiração da Terra.</p>
+    <p>A floresta está chamando você de volta. E ela tem a medicina exata que o seu corpo e a sua mente procuram.</p>
+  </div>
+</section>
+
+<!-- ============ 3. O QUE SÃO ============ -->
+<section class="o-que-sao">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="kicker">Shinrin-yoku</span>
+      <h2 class="h-section">Mais do que um<br><span class="accent">simples passeio</span></h2>
+      <p>Os banhos florestais não são caminhadas de esforço físico ou trilhas de ecoturismo. São uma experiência de presença, de escuta e de abertura.</p>
+      <p>Comprovada pela ciência e reverenciada pela sabedoria ancestral, essa prática reduz os níveis de cortisol, acalma os pensamentos acelerados, fortalece a imunidade e nos desperta para uma percepção sutil de que somos, nós mesmos, Natureza.</p>
+      <p><strong>Aprender a tomar um banho de floresta é aprender a respirar junto com o mundo.</strong></p>
+    </div>
+    <div class="figure-organic reveal">
+      <div class="frame">
+        <img src="imagens-landingpage-atual-bfmn-26/imagem-o-que-sao.png" alt="Raios de luz atravessando as folhas de uma floresta" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#16301F" d="M0,34 C240,8 480,48 720,24 C960,0 1200,54 1440,28 L1440,60 L0,60 Z"/></svg></div>
+
+<!-- ============ 4. APRESENTAÇÃO DO CURSO ============ -->
+<section class="curso" id="sobre-o-curso">
+  <div class="wrap center">
+    <div class="reveal">
+      <span class="kicker center">Sobre a formação</span>
+      <h2 class="h-section">Uma arte que se <span class="accent">aprende e se compartilha</span></h2>
+      <p class="lead">O aluno aprende tanto a teoria quanto a prática desta arte. Seja para o autocuidado ou para guiar vivências, o curso integra diferentes disciplinas e técnicas, preparando você para praticar sozinho ou conduzir experiências com grupos.</p>
+    </div>
+    <div class="destaques">
+      <div class="d-card reveal">
+        <div class="d-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m23 7-7 5 7 5V7zM14 5H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/></svg></div>
+        <h3>27 aulas · 40h</h3>
+        <p>Sete capítulos de aulas profundas, gravadas e prontas para assistir no seu ritmo.</p>
+      </div>
+      <div class="d-card reveal">
+        <div class="d-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>Acesso imediato</h3>
+        <p>Sua jornada começa assim que a inscrição é confirmada — sem espera.</p>
+      </div>
+      <div class="d-card reveal">
+        <div class="d-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Teoria e prática</h3>
+        <p>O rigor da ciência aliado à sensibilidade das práticas vivenciais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. MÓDULOS ============ -->
+<section class="modulos" id="modulos">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker center">O caminho que trilharemos</span>
+      <h2 class="h-section">O programa completo da <span class="accent">jornada</span></h2>
+      <p class="lead" style="margin:0 auto">Sete capítulos que conduzem você da introdução à autonomia para praticar e guiar.</p>
+    </div>
+    <div class="mod-grid">
+      <article class="mod reveal">
+        <span class="mod-num">Cap. 01</span>
+        <h3>Introdução</h3>
+        <ul>
+          <li>O que é um banho florestal?</li>
+          <li>Casa x Floresta: uma visão decolonial</li>
+          <li>O que a ciência diz sobre os banhos florestais</li>
+          <li>Ancestralidade e futuro da prática</li>
+        </ul>
+      </article>
+      <article class="mod reveal">
+        <span class="mod-num">Cap. 02</span>
+        <h3>O eu e a floresta</h3>
+        <ul>
+          <li>Mais do que uma caminhada</li>
+          <li>Entrar na floresta: preparo mental e físico</li>
+          <li>Observar e absorver: contato, percepção e comunicação</li>
+        </ul>
+      </article>
+      <article class="mod reveal">
+        <span class="mod-num">Cap. 03</span>
+        <h3>Respirar a floresta</h3>
+        <ul>
+          <li>O oceano-atmosfera das partículas florestais</li>
+          <li>A Biogeoquímica Atmosférica dos banhos florestais</li>
+          <li>Efeitos químicos no corpo e na mente</li>
+        </ul>
+      </article>
+      <article class="mod reveal">
+        <span class="mod-num">Cap. 04</span>
+        <h3>Corpo e mente na floresta</h3>
+        <ul>
+          <li>A Biossemiótica e os significados dos corpos florestais</li>
+          <li>Contemplar e aprender com as linguagens e vozes da floresta</li>
+        </ul>
+      </article>
+      <article class="mod reveal">
+        <span class="mod-num">Cap. 05</span>
+        <h3>A prática individual</h3>
+        <ul>
+          <li>Praticando sozinha/o: antes, durante e depois</li>
+          <li>Como se preparar · O que levar · Como iniciar</li>
+          <li>Exercícios e práticas individuais</li>
+          <li>Agradecendo e deixando o lugar · Elaborações posteriores</li>
+        </ul>
+      </article>
+      <article class="mod reveal">
+        <span class="mod-num">Cap. 06</span>
+        <h3>A prática com grupos</h3>
+        <ul>
+          <li>Praticando em grupos: antes, durante e depois</li>
+          <li>Como preparar um grupo · O que levar</li>
+          <li>Como iniciar (a chegada no local)</li>
+          <li>Exercícios coletivos · Agradecendo o lugar · Elaborações posteriores</li>
+        </ul>
+      </article>
+      <article class="mod span2 reveal">
+        <span class="mod-num">Cap. 07</span>
+        <h3>Responsabilidades e cuidados especiais</h3>
+        <ul>
+          <li>Impactos da presença humana (inclui manual de mínimo impacto)</li>
+          <li>Encontros com animais selvagens: o que fazer?</li>
+          <li>Lidando com imprevistos · Reflexões finais</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. PARA QUEM É ============ -->
+<section class="para-quem" id="para-quem">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker center">Para quem é este convite</span>
+      <h2 class="h-section">Caminhos que se <span class="accent">encontram aqui</span></h2>
+    </div>
+    <div class="perfis">
+      <div class="perfil reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div>
+        <h3>Buscadores</h3>
+        <p>Quem busca autocuidado, bem-estar e reconexão autêntica com a natureza no dia a dia.</p>
+      </div>
+      <div class="perfil reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v3H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/></svg></div>
+        <h3>Profissionais</h3>
+        <p>Atuantes da saúde, educação, turismo ou terapias que desejam integrar esta medicina ao seu trabalho.</p>
+      </div>
+      <div class="perfil reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-6M5 12H2M22 12h-3"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <h3>Futuros guias</h3>
+        <p>Quem deseja se tornar guia e facilitador de banhos florestais para grupos.</p>
+      </div>
+      <div class="perfil reveal">
+        <div class="p-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 4.5-9 9-9 9z"/></svg></div>
+        <h3>Almas sensíveis</h3>
+        <p>Qualquer pessoa que sinta o chamado de viver com mais presença, lentidão e profundidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. BENEFÍCIOS ============ -->
+<section class="beneficios">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker center">Os frutos desta prática</span>
+      <h2 class="h-section">Transformações que <span class="accent">enraízam</span></h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben reveal">
+        <div class="b-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+        <h3>Menos estresse e ansiedade</h3>
+        <p>Técnicas de relaxamento profundo que devolvem estabilidade emocional e física.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="b-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21C7 17 3 13 3 8.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 9 2.5C21 13 17 17 12 21z"/></svg></div>
+        <h3>Saúde fortalecida</h3>
+        <p>Impulso ao sistema imunológico, redução do estresse oxidativo e mais qualidade de vida.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="b-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12M12 12c0-4 3-7 8-8-1 5-4 8-8 8Zm0 0c0-3-2.5-5.5-6.5-6 .5 4 3 6 6.5 6Z"/></svg></div>
+        <h3>Conexão íntima com a Natureza</h3>
+        <p>Uma relação afetuosa, ética e sensível com os seres e o ambiente.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="b-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Autoconhecimento e equilíbrio</h3>
+        <p>Um espelho verde: a reconexão consigo mesmo acontece através do contato com a Terra.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="b-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-6 6c0 2 1 3.5 2 4.5V17h8v-3.5c1-1 2-2.5 2-4.5a6 6 0 0 0-6-6zM9 21h6"/></svg></div>
+        <h3>Leveza na rotina</h3>
+        <p>Práticas simples que trazem poesia e presença para os dias comuns.</p>
+      </div>
+      <div class="ben reveal">
+        <div class="b-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Habilidade para guiar</h3>
+        <p>Segurança teórica e prática para conduzir outras pessoas nesta jornada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#234A30" d="M0,28 C240,54 480,4 720,30 C960,56 1200,8 1440,32 L1440,60 L0,60 Z"/></svg></div>
+
+<!-- ============ 8. BASE CIENTÍFICA ============ -->
+<section class="ciencia">
+  <div class="wrap split">
+    <div class="figure-organic reveal">
+      <div class="frame">
+        <img src="imagens-landingpage-atual-bfmn-26/imagem-base-cientifica-ciencia.png" alt="Detalhe de folhas com orvalho ao amanhecer" loading="lazy">
+      </div>
+    </div>
+    <div class="reveal">
+      <span class="kicker">A ciência como encanto</span>
+      <h2 class="h-section">A ciência como<br><span class="accent">convite ao espanto</span></h2>
+      <p>Aqui, a ciência não é uma lista fria de dados. Ela é um convite ao espanto diante do mistério da vida.</p>
+      <p>Mergulhamos nos compostos orgânicos voláteis exalados pelas árvores. Compreendemos a biogeoquímica atmosférica e a biossemiótica, percebendo como a floresta se comunica quimicamente com nossos corpos, equilibrando nossa fisiologia de maneira comprovada por pesquisas e universidades no mundo inteiro.</p>
+      <p class="quote-line">A sabedoria ancestral sempre soube; a ciência contemporânea agora explica como e por quê.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#F4EFE5" d="M0,32 C240,6 480,52 720,26 C960,2 1200,50 1440,30 L1440,60 L0,60 Z"/></svg></div>
+
+<!-- ============ 9. ESCOLA ============ -->
+<section class="escola">
+  <div class="wrap split">
+    <div class="reveal">
+      <span class="kicker">Quem ensina</span>
+      <h2 class="h-section">O Instituto<br><span class="accent">Mestra Natureza</span></h2>
+      <p>Um espaço de aprendizagem, pesquisa e vivência dedicado à Ecopsicologia e às práticas de reconexão humano-natureza. Acreditamos que não há separação possível entre o cuidado com o mundo e o cuidado com a psique.</p>
+      <p>Este curso foi desenhado com o mesmo rigor, profundidade e sensibilidade que norteiam todas as nossas formações, como a Anima Naturae. Somos guias e estudantes dedicados aos ciclos da Terra, oferecendo a você um caminho seguro e inspirador para adentrar a floresta com respeito e sabedoria.</p>
+    </div>
+    <div class="figure-organic reveal">
+      <div class="frame">
+        <img src="imagens-landingpage-atual-bfmn-26/imagem-quem-ensina-escola.png" alt="Espaço de vivência do Instituto Mestra Natureza em meio à natureza" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#16301F" d="M0,30 C240,56 480,6 720,30 C960,54 1200,4 1440,30 L1440,60 L0,60 Z"/></svg></div>
+
+<!-- ============ 10. DEPOIMENTOS ============ -->
+<section class="depoimentos" id="depoimentos">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker center">Vozes de quem já trilhou</span>
+      <h2 class="h-section">Sementes que <span class="accent">floresceram</span></h2>
+    </div>
+    <div class="dep-grid">
+      <article class="dep reveal">
+        <span class="mark-quote" aria-hidden="true">&rdquo;</span>
+        <p>Concluir o curso de Banho de Floresta foi, para mim, um verdadeiro divisor de águas. Sempre tive profunda admiração pela natureza, encantada pela sua beleza e pela paz que transmite. O curso trouxe uma nova dimensão ao meu olhar: a comprovação científica dos benefícios que a floresta oferece ao corpo e à mente. Agora posso compartilhar esse conhecimento com outras pessoas, ajudando-as a se reconectar e se beneficiar dessa sabedoria tão ancestral quanto atual. Valeu muito a pena — o sentimento que fica é pura gratidão.</p>
+        <div class="who">
+          <span class="av" aria-hidden="true">D</span>
+          <div>
+            <div class="nm">Dniffer S. Oliveira</div>
+            <div class="ct">Minas Gerais · MG</div>
+          </div>
+        </div>
+      </article>
+      <article class="dep small reveal">
+        <span class="mark-quote" aria-hidden="true">&rdquo;</span>
+        <p>Aprender a química da floresta e, ao mesmo tempo, ter espaço para a poesia mudou completamente a forma como encaro meus dias.</p>
+        <div class="who">
+          <span class="av" aria-hidden="true">P</span>
+          <div>
+            <div class="nm">Paula A. Silva</div>
+            <div class="ct">São Paulo, SP</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EAE1D0" d="M0,30 C240,4 480,54 720,28 C960,2 1200,52 1440,30 L1440,60 L0,60 Z"/></svg></div>
+
+<!-- ============ 11. INVESTIMENTO ============ -->
+<section class="investimento" id="investimento">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker center">Investimento</span>
+      <h2 class="h-section">Inicie sua <span class="accent">jornada</span></h2>
+      <p class="lead" style="margin:0 auto">Acesso completo aos 7 capítulos · 27 aulas · 40h de conteúdo, teoria e prática.</p>
+    </div>
+    <div class="price-card reveal">
+      <span class="tag">Acesso completo</span>
+      <h3>Formação em Banhos de Floresta</h3>
+      <p class="desc">Teoria e prática para o autocuidado e para guiar vivências.</p>
+      <div class="price-val"><small>investimento único</small>R$ 297<span style="font-size:1.6rem">,00</span></div>
+      <a href="https://pay.kiwify.com.br/HtdaLpc" class="btn" target="_blank" rel="noopener noreferrer">
+        Garantir minha vaga
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <ul class="pay-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pix (à vista)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Pix + cartão de crédito (combinados)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Até 2 cartões de crédito simultâneos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Parcelamento em até 12x no cartão</li>
+      </ul>
+      <p class="secure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Pagamento seguro processado pela Kiwify
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. FAQ ============ -->
+<section class="faq">
+  <div class="wrap">
+    <div class="center reveal">
+      <span class="kicker center">Dúvidas frequentes</span>
+      <h2 class="h-section">Antes de <span class="accent">entrar na floresta</span></h2>
+    </div>
+    <div class="reveal" style="margin-top:2.6rem">
+      <details class="faq-item">
+        <summary>As aulas são ao vivo ou gravadas?</summary>
+        <p>O curso é totalmente composto por aulas gravadas — 27 aulas em 7 capítulos, somando 40h de conteúdo. Você assiste, pausa e absorve no seu próprio ritmo, encaixando os estudos na sua rotina com tranquilidade.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Preciso ter conhecimento prévio em biologia ou psicologia?</summary>
+        <p>Não. O curso foi desenhado para ser acessível e profundo ao mesmo tempo. Explicamos a ciência de forma poética e compreensível — ideal tanto para leigos apaixonados pela natureza quanto para profissionais da área.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quando recebo o acesso ao curso?</summary>
+        <p>O acesso é liberado imediatamente após a confirmação do pagamento. Você poderá assistir às aulas quantas vezes desejar, ao longo do período de acesso disponibilizado pela plataforma Kiwify.</p>
+      </details>
+      <details class="faq-item">
+        <summary>O curso me capacita a guiar grupos?</summary>
+        <p>Sim. Os Capítulos 5 e 6 fornecem a base teórica e prática para conduzir a si mesmo e a grupos, com exercícios e cuidados estruturais essenciais para quem deseja atuar como facilitador.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Quais são as formas de pagamento?</summary>
+        <p>Pix à vista, Pix combinado com cartão de crédito, até 2 cartões de crédito simultâneos ou parcelamento em até 12x no cartão. Todo o pagamento é processado com segurança pela Kiwify.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="wrap reveal">
+    <span class="kicker center" style="color:#C9D9C0">A floresta espera</span>
+    <h2>A floresta espera <em>por você</em>.</h2>
+    <p>Dê o primeiro passo para uma vida de presença, saúde e conexão profunda com o mundo natural.</p>
+    <a href="https://pay.kiwify.com.br/HtdaLpc" class="btn" target="_blank" rel="noopener noreferrer">
+      Entre na floresta
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="brand">
+      <img src="logo mestra.png" alt="Mestra Natureza" class="brand-logo" width="52" height="52">
+    </div>
+    <p>&copy; Instituto Mestra Natureza. Todos os direitos reservados.</p>
+    <p class="fine">Dedicado à Ecopsicologia e aos Saberes da Natureza.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Nav scroll state
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('scrolled', window.scrollY>40); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Mobile menu
+  var menu=document.getElementById('mobileMenu');
+  var open=document.getElementById('navToggle');
+  var close=document.getElementById('mmClose');
+  function setMenu(v){
+    menu.classList.toggle('open',v);
+    open.setAttribute('aria-expanded',v);
+    document.body.style.overflow=v?'hidden':'';
+  }
+  open.addEventListener('click',function(){setMenu(true)});
+  close.addEventListener('click',function(){setMenu(false)});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+
+  // Scroll reveal (respects reduced motion)
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.reveal');
+  if(reduce||!('IntersectionObserver'in window)){
+    els.forEach(function(el){el.classList.add('in')});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }
+})();
+</script>
+</body>
+</html>
