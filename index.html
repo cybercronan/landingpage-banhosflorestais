@@ -182,16 +182,44 @@
   .nav-toggle svg{width:28px;height:28px}
 
   /* ---------- Hero ---------- */
+  @keyframes heroFadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
   .hero{
+    position:relative;
+    overflow:hidden;
     min-height:100vh;min-height:100dvh;
     display:flex;align-items:center;justify-content:center;
     padding:clamp(100px,15vh,140px) 0 clamp(60px,10vh,80px);
-    background:
-      linear-gradient(105deg,rgba(18,40,26,.88) 0%,rgba(18,40,26,.60) 50%,rgba(18,40,26,.35) 100%),
-      url("imagens-landingpage-atual-bfmn-26/background-hero-section.png") center/cover no-repeat;
+    background: var(--forest-deep) url("imagens-landingpage-atual-bfmn-26/background-hero-section.png") center/cover no-repeat;
     color:var(--on-dark);
   }
-  .hero .wrap{max-width:820px;text-align:center}
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transform: scale(1.15);
+    transform-origin: center center;
+    pointer-events: none;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(105deg,rgba(18,40,26,.88) 0%,rgba(18,40,26,.60) 50%,rgba(18,40,26,.35) 100%);
+  }
+  .hero .wrap{
+    max-width:820px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+    animation: heroFadeIn 1.2s var(--ease) forwards;
+  }
   .hero .kicker{color:#C9D9C0;justify-content:center}
   .hero .kicker::before{background:#C9D9C0}
   .hero h1{
@@ -577,6 +605,10 @@
 
 <!-- ============ 1. HERO ============ -->
 <header class="hero" id="topo">
+  <video autoplay loop muted playsinline class="hero-video" poster="imagens-landingpage-atual-bfmn-26/background-hero-section.png">
+    <source src="https://res.cloudinary.com/dzbmjnlfz/video/upload/v1782760991/video-hero2-2_sswpc5.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
   <div class="wrap" id="main-content">
     <span class="kicker">Formação · Instituto Mestra Natureza</span>
     <h1>Banhos de <em>Floresta</em></h1>
@@ -597,7 +629,7 @@
   </div>
 </header>
 
-<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#F4EFE5" d="M0,30 C240,60 480,0 720,24 C960,48 1200,8 1440,34 L1440,60 L0,60 Z"/></svg></div>
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path fill="#EAE1D0" d="M0,30 C240,60 480,0 720,24 C960,48 1200,8 1440,34 L1440,60 L0,60 Z"/></svg></div>
 
 <!-- ============ 1b. AULA EXPERIMENTAL ============ -->
 <section class="aula-exp" id="aula-experimental">
@@ -680,7 +712,7 @@
     <div class="center reveal">
       <span class="kicker center">O caminho que trilharemos</span>
       <h2 class="h-section">O programa completo da <span class="accent">jornada</span></h2>
-      <p class="lead" style="margin:0 auto">Sete etapas que conduzirão você da introdução à autonomia para praticar e guiar.</p>
+      <p class="lead" style="margin:0 auto">Sete módulos que vão preparar você para praticar e guiar.</p>
     </div>
     <div class="mod-grid">
       <article class="mod reveal">
@@ -756,7 +788,7 @@
 <section class="para-quem" id="para-quem">
   <div class="wrap">
     <div class="center reveal">
-      <span class="kicker center">Para quem é este convite</span>
+      <span class="kicker center">Para quem é esse convite</span>
       <h2 class="h-section">Caminhos que se <span class="accent">encontram aqui</span></h2>
     </div>
     <div class="perfis">
